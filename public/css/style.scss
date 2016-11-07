@@ -1,0 +1,137 @@
+body {
+	height: 100%;
+	background-color: #000005;
+	font-family: "Roboto", Verdana, sans-serif;
+	font-size: 14px;
+	margin: 0;
+	padding: 0;
+}
+
+svg {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	fill: transparent;
+	overflow: hidden;
+	cursor: crosshair;
+	//will-change: transform;
+}
+
+.lands{
+	//fill: #111;//#2b6;//#6CCC00
+  stroke: #fff;
+	stroke-opacity: 1;
+}
+
+.symbol {
+  fill-opacity: .8;
+  stroke: #fff;
+	stroke-width: .5px;
+}
+
+.grat {
+  fill: none;
+  stroke: #e2b42e;
+  stroke-width: .5px;
+  stroke-opacity: .5;
+}
+
+.tooltip {
+	display: none;
+	position: absolute;
+	width: auto;
+	height: auto;
+	color: #ddd;
+	background-color: rgba(16,16,16,.85);
+	text-align: center;
+	border-radius: 8px;
+	pointer-events: none;
+	box-shadow: 0 0px 3px 0px #aaa;
+	h4 {
+		padding: 8px 10px 8px 10px;
+		margin: 0;
+		color: #e2b42e;
+		font-size: 18px;
+		font-weight: 400;
+		text-decoration: underline;
+		letter-spacing: 1px;
+	}
+	p {
+		padding: 0px 10px 5px 10px;
+		margin: 0;
+		font-weight: 300;
+		&:last-child { padding-bottom: 10px; }
+	}
+}
+
+.legendQuant {
+	visibility: hidden;
+	pointer-events: none;
+
+	&.active { visibility: visible; }
+
+	text { fill: #fff; }
+
+	.label {
+		font-weight: 300;
+	}
+
+	.legendTitle {
+		font-size: 18px;
+	}
+}
+
+.btn-wrap {
+	position: absolute;
+	top: 20px;
+	left: 16px;
+	color: #888888;
+	background-color: rgba(0, 0, 5, 0.2);
+	border-radius: 4px;
+	box-shadow: 0 0px 3px 0px #aaa;
+	cursor: pointer;
+	-webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none;   /* Chrome/Safari/Opera */
+  -khtml-user-select: none;    /* Konqueror */
+  -moz-user-select: none;      /* Firefox */
+  -ms-user-select: none;
+	user-select: none;
+	&.active {
+		height: 220px;
+		width: 160px;
+	}
+	h2 {
+		margin: 0;
+		padding: 4px 10px 4px;
+		font-weight: 300;
+
+		span {
+			display: none;
+			color: #e2b42e;
+			&.active { display: inline-block; }
+		}
+	}
+}
+
+#modal {
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	color: #fff;
+	background: #000;
+	mix-blend-mode: multiply;
+	&.hidden { display: none; }
+
+	.wrap {
+		position: absolute;
+		top: 50%;
+	  left: 50%;
+	  transform: translate(-50%,-50%);
+		h1, p {
+			text-align: center;
+		}
+		h1 {
+			font-size: 8vw;
+		}
+	}
+}
